@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    Book Collection
+  </title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+  <header>The Biblio Mini Collection</header>
+
+  <main>
+    <form="post" action="/">
+      {{ #booklisting }}
+      <div class="bookProfile">
+        <img src="{{ bookCover }}"></img>
+        <p class="title">{{ bookName }}</p>
+        <p class="author">{{ bookAuthor }}</p>
+        <details>
+          <summary>
+            Click for book summary
+          </summary>
+          <p class="summaryBook">{{ bookDescription }}</p>
+        </details>
+      </div>
+      {{ /booklisting }}
+    </form>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <h1>Add to Collection</h1>
+      <form method="post" action="/formAdd">
+        <p>
+          <input type="text" name="add_bookName" placeholder="Book Title">
+          <input type="text" name="add_bookAuthor" placeholder="Author">
+        </p>
+        <p>
+          <input type="text" name="add_bookSeries" placeholder="Name of Series">
+          <input type="text" name="add_bookSeriesNum" placeholder="Series Number">
+        </p>
+        <p>
+          <input type="text" name="add_bookGenre" placeholder="Genre">
+          <input type="text" name="add_bookCover" placeholder="Book Cover URL">
+        </p>
+        <p>
+          <input type="text" name="add_bookDescription" placeholder="Summary of Book">
+        </p>
+        <p>
+          <input type="submit" value="Add This Book">
+        </p>
+      </form>
+    </div>
+
+    <div class="wrapper">
+      <h1>Update Collection</h1>
+      <form method="post" action="/formUpdate">
+        <p>
+          <input type="text" name="update_bookName" placeholder="Book Title">
+          <input type="text" name="update_bookAuthor" placeholder="Author">
+        </p>
+        </p>
+        <p>
+          <input type="text" name="update_bookSeries" placeholder="Name of Series">
+          <input type="text" name="update_bookSeriesNum" placeholder="Series Number">
+        </p>
+        <p>
+          <input type="text" name="update_bookGenre" placeholder="Genre">
+          <input type="text" name="update_bookCover" placeholder="Book Cover URL">
+        </p>
+        <p>
+          <input type="text" name="update_bookDescription" placeholder="Summary of Book">
+        </p>
+        <p>
+          <input type="submit" value="Update This Book">
+        </p>
+      </form>
+    </div>
+
+    <div class="wrapper">
+      <h1>Delete Collection</h1>
+      <p id="note">Use this form to delete the book from the collection. Use this form only if you are sure you want to delete the item from the collection.</p>
+      <form method="post" action="/formDelete">
+        <p><input type="text" name="delete_bookName" placeholder="Book Title"></p>
+        <p><input type="submit" value="Delete This Book"></p>
+      </form>
+    </div>
+
+  </footer>
+
+</body>
+</html>
