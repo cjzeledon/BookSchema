@@ -104,19 +104,19 @@ mongoose.connect('mongodb://localhost:27017/SchemaTime');
   //   });
 
   /////////This didn't work either...///////////
-  // BookInfo.updateOne({bookAuthor: updatebookAuthor},
-  //   {$push: {bookName: updatebookName,
-  //     bookDetails:{
-  //       bookSeries: updatebookSeries,
-  //       bookSeriesNum: updatebookSeriesNum, },
-  //     bookGenre: updatebookGenre,
-  //     bookDescription: updatebookDescription,
-  //     bookCover: updatebookCover
-  //   }})
-  //     .then(function (err, book) {
-  //       console.log(err);
-  //       res.redirect('/');
-  //     });
+  BookInfo.updateOne({bookAuthor: updatebookAuthor},
+    {$set: {bookName: updatebookName,
+      bookDetails:{
+        bookSeries: updatebookSeries,
+        bookSeriesNum: updatebookSeriesNum, },
+      bookGenre: updatebookGenre,
+      bookDescription: updatebookDescription,
+      bookCover: updatebookCover
+    }})
+      .then(function (err, book) {
+        console.log(err);
+        res.redirect('/');
+      });
 
 });
 

@@ -10,8 +10,8 @@ const biblioSchema = new mongoose.Schema({
       bookSeriesNum: Number,
     }],
     bookGenre: { type: String, default: 'Unfiled'},
-    bookDescription: String,
-    bookCover: String
+    bookDescription: { type: String, default: 'What is the story about? Need information here.'},
+    bookCover: { type: String, default: 'http://tanyasood.com/wp-content/uploads/2016/12/coverplaceholder-267x400.png'},
 });
 
 // The variable name and the string are almost always the same.
