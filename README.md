@@ -1,4 +1,3 @@
-# BookSchema
 
 Create a Mongoose schema
 
