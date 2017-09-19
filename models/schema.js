@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 //NOTE: {} is an object and [] is an array
 
+mongoose.connect('mongodb://localhost:27017/SchemaTime');
+
 const biblioSchema = new mongoose.Schema({
     bookName: { type: String, required: true },
     bookAuthor: { type: String, required: true },

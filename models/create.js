@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
+mongoose.connect('mongodb://localhost:27017/SchemaTime');
+
 //Create an instance of your model using the schema that you created from biblio.js
 // let book = new BookInfo({
 //   bookName: 'Crown of Midnight',
